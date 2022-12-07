@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/storage.css">
+    <title>Sube tu voucher de pago</title>
+</head>
+<body>
+
+    <header>
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+        <a class="logo" href="./index.html"> <img src="./image/logo 80x80.png" alt=""></a>
+            <nav class="navbar">
+                <a href="#">Inicio</a>
+                <a href="#">Ofertas</a>
+                <a href="#">Nuestro menú</a>
+                <a href="#">Haz tu pedido</a>
+                <a href="#">Nosotros</a>
+                <a href="#">Contáctanos</a>
+                <a href="./index.html">Regístrate</a>
+                <a href="./storage.html">Sube tu voucher</a>
+            </nav>
+        
+        <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-shopping-cart"></a>
+            <a href="#" class="fas fa-user"></a>
+        </div>
+    </header>
+
+    <section class="cargar">
+        <h1>SUBE TU VOUCHER DE PAGO</h1>
+        <div class="subir">
+            <input type="file" name="" id="img">
+            <br>
+            <br>
+            <button id="boton">SUBIR</button>
+        </div>
+    </section>
+
+
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+        import { getStorage, ref, uploadBytes } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-storage.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+    
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBhs2La-quBzeGsvoPvVscezE9jF86oWS0",
+            authDomain: "usuario-6d3b5.firebaseapp.com",
+            projectId: "usuario-6d3b5",
+            storageBucket: "usuario-6d3b5.appspot.com",
+            messagingSenderId: "956497881034",
+            appId: "1:956497881034:web:f41c59a28ea30188c81133"
+        };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const storage = getStorage(app);
+
+        //Creamos un evento para que el botón guarde la información
+        document.getElementById("boton").addEventListener("click", function(){
+            //variable que guardará los archivos subidos y los almacena en una lista
+            var file = document.getElementById("img").files[0]
+
+            const storage = getStorage();
+            const storageRef = ref(storage, 'uploadedimage');
+
+            // 'file' comes from the Blob or File API
+            uploadBytes(storageRef, file).then((snapshot) => {
+            console.log('Uploaded a blob or file!');
+            alert("El archivo ha sido cargado")
+            });
+        })
+    </script>
+
+    <footer>
+        <section class="footer">
+            <div class="box-container">
+                <div class="box">
+                    <h3>Fruit Fresh</h3>
+                    <p>Nuestra familia Frutal Fresh, nació en el año 2017 para llevar a cada uno de los usuarios, la mejor experiencia que puedan imaginar.</p>
+                </div>
+    
+                <div class="box">
+                    <h3>Enlaces</h3>
+                    <a href="#">Inicio</a>
+                    <a href="#">Categorías</a>
+                    <a href="#">Ofertas</a>
+                    <a href="#">Delivery</a>
+                </div>
+    
+                <div class="box">
+                    <h3>Mi cuenta</h3>
+                    <a href="#">Mi cuenta</a>
+                    <a href="#">Mis pedidos</a>
+                    <a href="#">Favoritos</a>
+                </div>
+    
+                <div class="box">
+                    <h3>Contáctanos</h3>
+                    <p>El Parque 125 (La Planicie) Referencia: A una cuadra de la Universidad César Vallejo.</p>
+                    <br>
+                    <p>Teléfono: (01) 2738599</p>
+                    <br>
+                </div>
+            </div>
+        </section>
+    </footer>
+</body>
+</html>
