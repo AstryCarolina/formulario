@@ -51,7 +51,6 @@
         <br>
       
         <button id="ingresar">REGISTRARSE</button>
-        <button id="limpiar" onclick="limpiar()">BORRAR</button>
       </form>
       <br>
       <br>
@@ -141,10 +140,6 @@
           });
         })
 
-  // Crear la función para limpiar el contenido de los datos ingresados
-  function limpiar(){
-    document.getElementById("bloque1").reset();
-  }
 
   document.getElementById("google").addEventListener("click",function(){
     signInWithRedirect(auth, provider);
