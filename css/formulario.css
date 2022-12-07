@@ -24,8 +24,9 @@ header{
 }
 
 header .navbar a{
-    font-size: 1.2rem;
-    padding: 0 1rem;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 0 0.5rem;
     color: #666;
     text-decoration: none;
 }
@@ -37,9 +38,10 @@ header .navbar a:hover{
 }
 
 header .icons a{
-    font-size: 2.5rem;
+    font-size: 0.8rem;
     color: #333;
-    margin-left: 1.5rem;
+    margin-left: 1rem;
+    text-decoration: none;
 }
 
 header .icons a:hover{
@@ -83,6 +85,11 @@ h1{
     border: 1px solid orangered;
     font-size: large;
 }
+
+#bloque1 > input{
+        border: 1px solid orangered;
+        font-size: large;
+    }
 
 button{
     background-color: orangered;
